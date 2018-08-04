@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentfulService } from '../contentful.service';
+import { Router } from '@angular/router';
+
 import { Entry } from 'contentful';
 
 @Component({
@@ -13,8 +15,8 @@ export class HomeComponent implements OnInit {
   private libros: Entry<any>[] = [];
 
   constructor(
-    // Dependency injection
-    private contentfulService: ContentfulService
+    private router: Router,
+    private contentfulService: ContentfulService  
   ) { }
 
   ngOnInit() {
@@ -24,5 +26,9 @@ export class HomeComponent implements OnInit {
     this.contentfulService.getLibros()
     .then(libros => this.libros = libros);
   }
+
+  goToAutor(autorId) {
+    this.router.navigate(['/autor', autorId]);
+  }  
 
 }

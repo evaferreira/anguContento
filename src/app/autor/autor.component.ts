@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ContentfulService } from '../contentful.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
+import { Entry } from 'contentful';
 
 @Component({
   selector: 'app-autor',
@@ -10,12 +13,24 @@ export class AutorComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private contentfulService: ContentfulService  
   ) { }
+  
+  public autor: Entry<any>;
 
   ngOnInit() {
-    const autor = this.route.snapshot.paramMap.get('id');
-    console.log("El autor es", autor)
+    const autorId = this.route.snapshot.paramMap.get('id');
+    console.log("El autor es", autorId);
+    
+    this.contentfulService.getAutor(autorId)
+      .then((autor) => {
+        this.autor = autor;
+    });
+  }
+
+  goToHome() {
+    this.router.navigate(['/']);
   }
 
 }

@@ -37,5 +37,14 @@ export class ContentfulService {
      }, query))
      .then(res => res.items);
   }
+
+  // Conseguir data de autor X
+  getAutor(slug: string): Promise<Entry<any>> {
+    return this.cdaClient.getEntries(Object.assign({
+       content_type: CONFIG.contentTypeIds.autor
+    }, {'fields.slug': slug}))
+    .then(res => res.items[0]);
+  }
+  
 }
 

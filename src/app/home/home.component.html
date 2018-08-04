@@ -3,7 +3,9 @@
 <ul>
   <!-- {{ autores | json }} -->
   <li *ngFor="let autor of autores">
-    {{ autor.fields.nombreCompleto }}
+    <a (click)="goToAutor(autor.fields.slug)">
+      {{ autor.fields.nombreCompleto }}
+    </a>
   </li>
 </ul>
 
