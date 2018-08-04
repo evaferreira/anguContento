@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 // import the router modules and the types for routes
 import { RouterModule, Routes }   from '@angular/router';
+import { ContentfulService } from './contentful.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -30,7 +31,9 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    ContentfulService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
