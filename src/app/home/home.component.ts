@@ -29,6 +29,10 @@ export class HomeComponent implements OnInit {
 
   goToAutor(autorId) {
     this.router.navigate(['/autor', autorId]);
-  }  
+  }
+
+  goToLibro(libroId) {
+    this.router.navigate(['/libro', libroId]);
+  }
 
 }

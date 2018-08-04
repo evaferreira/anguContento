@@ -45,6 +45,14 @@ export class ContentfulService {
     }, {'fields.slug': slug}))
     .then(res => res.items[0]);
   }
+
+  // Conseguir data de libro X
+  getLibro(slug: string): Promise<Entry<any>> {
+    return this.cdaClient.getEntries(Object.assign({
+       content_type: CONFIG.contentTypeIds.libro
+    }, {'fields.slug': slug}))
+    .then(res => res.items[0]);
+  }
   
 }
 

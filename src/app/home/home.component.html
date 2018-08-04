@@ -13,7 +13,9 @@
 
 <ul>
   <li *ngFor="let libro of libros">
-    {{ libro.fields.titulo }}
+    <a (click)="goToLibro(libro.fields.slug)">
+      {{ libro.fields.titulo }}
+    </a>
   </li>
 </ul>
 
