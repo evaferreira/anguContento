@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// import the new service
+import { ContentfulService } from './contentful.service';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -9,8 +12,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule
+  ], 
+  providers: [
+    ContentfulService
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
