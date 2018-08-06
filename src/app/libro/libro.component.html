@@ -1,8 +1,9 @@
-<article class="libro">
+<article class="libro" *ngIf="libro">
+  {{ libro | json }}
   <h2>{{libro.fields.titulo}}</h2>
   <p>${{libro.fields.precio}}</p>
-  <p>El autor es
+  <!-- <p>El autor es
     {{ libro.fields.autor.fields.nombreCompleto }}
   </p>
-  <img src="{{ libro.fields.imagen.fields.file.url}}" alt="">
+  <img src="{{ libro.fields.imagen.fields.file.url}}" alt=""> -->
 </article>

@@ -1,6 +1,4 @@
-<article class="autor">
-  <h2>{{autor.fields.nombreCompleto}}</h2>
+<article class="autor" *ngIf="autor">
   <p>{{autor.fields.fechaDeNacimiento}}</p>
 </article>
 
-<a (click)="goToHome()">Volver a Home</a>

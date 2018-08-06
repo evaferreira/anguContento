@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ContentfulService } from '../contentful.service';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import { Entry } from 'contentful';
 
@@ -11,13 +11,12 @@ import { Entry } from 'contentful';
 })
 export class LibroComponent implements OnInit {
 
-  public libro: Entry<any>;
-
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private contentfulService: ContentfulService 
   ) { }
+
+  public libro: Entry<any>;
 
   ngOnInit() {
     const libroId = this.route.snapshot.paramMap.get('id');
@@ -28,4 +27,5 @@ export class LibroComponent implements OnInit {
         this.libro = libro;
     });
   }
+
 }

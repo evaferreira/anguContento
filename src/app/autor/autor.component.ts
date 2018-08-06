@@ -13,7 +13,6 @@ export class AutorComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private contentfulService: ContentfulService  
   ) { }
   
@@ -21,16 +20,11 @@ export class AutorComponent implements OnInit {
 
   ngOnInit() {
     const autorId = this.route.snapshot.paramMap.get('id');
-    console.log("El autor es", autorId);
+    console.log("El autor es...", autorId);
     
     this.contentfulService.getAutor(autorId)
       .then((autor) => {
         this.autor = autor;
     });
   }
-
-  goToHome() {
-    this.router.navigate(['/']);
-  }
-
 }

@@ -10,15 +10,15 @@ import { Entry } from 'contentful';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  public autores: Entry<any>[] = [];
-  public libros: Entry<any>[] = [];
-
+  
   constructor(
     private router: Router,
     private contentfulService: ContentfulService  
   ) { }
-
+  
+  public autores: Entry<any>[] = [];
+  public libros: Entry<any>[] = [];
+  
   ngOnInit() {
     this.contentfulService.getAutores()
     .then(autores => this.autores = autores);
