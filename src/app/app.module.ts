@@ -13,7 +13,7 @@ import { LibroComponent } from './libro/libro.component';
 
 // define the available routes
 const routes: Routes = [
-  { path: '', component: HomeComponent},
+  { path: '', component: HomeComponent, pathMatch: 'full'},
   { path: 'autor/:id', component: AutorComponent},
   { path: 'libro/:id', component: LibroComponent}
 ];

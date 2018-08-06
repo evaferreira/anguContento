@@ -11,8 +11,8 @@ import { Entry } from 'contentful';
 })
 export class HomeComponent implements OnInit {
 
-  private autores: Entry<any>[] = [];
-  private libros: Entry<any>[] = [];
+  public autores: Entry<any>[] = [];
+  public libros: Entry<any>[] = [];
 
   constructor(
     private router: Router,
