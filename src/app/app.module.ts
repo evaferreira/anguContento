@@ -27,7 +27,7 @@ const routes: Routes = [
     LibroComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
