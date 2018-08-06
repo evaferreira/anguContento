@@ -15,7 +15,7 @@ const app = express();
 const indexHtml = readFileSync(__dirname + '/dist/index.html', 'utf-8').toString();
 
 
-app.get('*.*', express.static(__dirname + '/dist', {
+app.get('*.*.*', express.static(__dirname + '/dist', {
     maxAge: '1y'
 }));
 
