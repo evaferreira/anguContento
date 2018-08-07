@@ -1,7 +1,6 @@
 <article class="libro" *ngIf="libro">
-  {{ libro | json }}
-  <h2>{{libro.fields.titulo}}</h2>
-  <p>${{libro.fields.precio}}</p>
+  <h2>{{libro.titulo}}</h2>
+  <p>${{libro.precio}}</p>
   <!-- <p>El autor es
     {{ libro.fields.autor.fields.nombreCompleto }}
   </p>

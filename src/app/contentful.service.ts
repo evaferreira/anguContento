@@ -40,18 +40,14 @@ export class ContentfulService {
 
   // Conseguir data de autor X
   getAutor(slug: string): Promise<Entry<any>> {
-    return this.cdaClient.getEntries(Object.assign({
-       content_type: CONFIG.contentTypeIds.autor
-    }, {'fields.slug': slug}))
-    .then(res => res.items[0]);
+    return this.getAutores({'fields.slug': slug})
+    .then(items => items[0].fields);
   }
 
   // Conseguir data de libro X
   getLibro(slug: string): Promise<Entry<any>> {
-    return this.cdaClient.getEntries(Object.assign({
-       content_type: CONFIG.contentTypeIds.libro
-    }, {'fields.slug': slug}))
-    .then(res => res.items[0]);
+    return this.getLibros({'fields.slug': slug})
+    .then(items => items[0].fields);
   }
   
 }
