@@ -1,6 +1,11 @@
+// app.module.ts
+
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+
+// Llamamos al service de Contentful
+import { ContentfulService } from './contentful.service';
 
 // import the router modules and the types for routes
 import { RouterModule, Routes }   from '@angular/router';
@@ -30,7 +35,17 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+	ContentfulService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+
+
+
+
+
