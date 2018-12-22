@@ -1,3 +1,38 @@
 <p>
   home works!
+  
+  pipe: transforma el dato<br>
+  
+  <!-- {{autores | json }} -->  
+
 </p>
+
+<ul>
+	<li *ngFor="let libro of libros">
+		{{ libro.fields.titulo }} - 
+		AUTOR
+	</li>
+</ul>
+
+<hr>
+
+<ul>
+	<li *ngFor="let autor of autores">
+		<a (click)="goToDetails(autor.fields.slug)">
+		{{ autor.fields.nombreCompleto }}
+		</a>
+	</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+

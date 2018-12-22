@@ -1,3 +1,10 @@
-<p>
-  autor works!
-</p>
+<div *ngIf="autor">
+	<h2>{{autor.fields.nombreCompleto}}</h2>
+	<p>{{autor.fields.fechaDeNacimiento}}</p>
+	<p>
+	  autor works!
+	  
+	  {{autor | json}}
+	  
+	</p>
+</div>
